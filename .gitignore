@@ -1,1 +1,8 @@
+.env
 node_modules/
+
+# Input/Output Files
+input.csv
+errors.csv
+mapped-from-csv.json
+mapped-from-json-for-firestorm.json

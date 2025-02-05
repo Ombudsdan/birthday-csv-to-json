@@ -10,10 +10,6 @@ import {
   doesFileExist,
 } from "./utils.js";
 
-const SOURCE_CSV_FILE = "input.csv";
-const OUTPUT_JSON_FILE = "mapped-from-csv.json";
-const ERROR_CSV_FILE = "errors.csv";
-
 const users = [];
 const plushies = [];
 const failedEntries = [];
@@ -23,7 +19,7 @@ let outputJsonData = { users: {}, plushies: {} };
 
 setupFilesAndObjects();
 
-createReadStream(SOURCE_CSV_FILE)
+createReadStream(process.env.SOURCE_CSV)
   .pipe(csv())
   .on("data", row => {
     const plushie = {
@@ -61,7 +57,7 @@ createReadStream(SOURCE_CSV_FILE)
     mapJsonObjects();
 
     // Write the mapped data to the JSON file
-    writeDataToJsonFile(OUTPUT_JSON_FILE, outputJsonData);
+    writeDataToJsonFile(process.env.MAPPED_FROM_CSV_JSON, outputJsonData);
 
     console.log(
       `${plushies.length} New (Added) | ${existingRows.length} Existing (Skipped) | ${failedEntries.length} Failed.`
@@ -111,27 +107,28 @@ function writeFailureCsvFile() {
     .join("\n");
 
   // Append instead of overwriting
-  appendFile(ERROR_CSV_FILE, failedCsvContent);
+  appendFile(process.env.ERRORS_CSV, failedCsvContent);
 }
 
 /** Sets up and checks the necessary files and objects before proceeding */
 function setupFilesAndObjects() {
   // If an input CSV file is missing, handle the error
-  if (!doesFileExist(SOURCE_CSV_FILE)) {
+  if (!doesFileExist(process.env.SOURCE_CSV)) {
     console.error(
-      `Error: The input CSV file "${SOURCE_CSV_FILE}" does not exist.`
+      `Error: The input CSV file "${process.env.SOURCE_CSV}" does not exist.`
     );
     process.exit(1); // Exit the script with an error code
   }
 
   // If an output CSV file exists, load in that existing data
-  if (doesFileExist(OUTPUT_JSON_FILE)) {
-    outputJsonData = readJsonFile(OUTPUT_JSON_FILE) ?? outputJsonData;
+  if (doesFileExist(process.env.MAPPED_FROM_CSV_JSON)) {
+    outputJsonData =
+      readJsonFile(process.env.MAPPED_FROM_CSV_JSON) ?? outputJsonData;
   }
 
   // If an error CSV doesn't exist, create one with headers
-  if (!doesFileExist(ERROR_CSV_FILE)) {
-    writeDataToCsvFile(ERROR_CSV_FILE, "Username,Plushie Name,dob\n");
+  if (!doesFileExist(process.env.ERRORS_CSV)) {
+    writeDataToCsvFile(process.env.ERRORS_CSV, "Username,Plushie Name,dob\n");
   }
 }
 
