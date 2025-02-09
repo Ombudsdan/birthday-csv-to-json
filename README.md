@@ -18,8 +18,8 @@ Regardless of whether the optional files are present, all environment variables 
 - `GOOGLE_APPLICATION_CREDENTIALS={fileName}.json` - the secret account credentials for Firebase.
   
 ### Optional Files
-- `MAPPED_FROM_CSV_JSON={fileName}.json` - the result of the successful conversions from CSV to JSON.
-- `MAPPED_FOR_UPLOAD_JSON={fileName}.json` - the result of a successful mapping of JSON to a format appropriate for importing to Firestorm.
+- `MAPPED_FROM_CSV_JSON=mapped-from-csv.json` - the result of the successful conversions from CSV to JSON.
+- `MAPPED_FOR_UPLOAD_JSON=mapped-from-json-for-firestore.json` - the result of a successful mapping of JSON to a format appropriate for importing to Firestore.
 - `ERRORS_CSV={fileName}.csv` - the result of the failed conversions.
 
 ## Scripts
