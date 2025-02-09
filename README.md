@@ -4,7 +4,7 @@ A tool to convert Plushie Birthdays from CSV to JSON format for DB import.
 ## Requirements
 - `.env` file with the necessary environment variables.
 - A file for the `SOURCE_CSV`, mapped accordingly in the `.env` file.
-- A file for the `GOOGLE_APPLICATION_CREDENTIALS`, with the secret account credentials downloaded from Firebase (if uploading to Firestore).
+- A file for the `GOOGLE_APPLICATION_CREDENTIALS`, with the secret account credentials downloaded from Firebase (if uploading to Firestore). Keep this outside of the repo, for example in a sibling directory to the application files: `../secrets/firebase-serviceAccountKey.json`.
 - Add your required files to the root directory. 
 
 ## Environment Variables
@@ -15,7 +15,7 @@ Regardless of whether the optional files are present, all environment variables 
 
 ### Required Files
 - `SOURCE_CSV={fileName}.csv` - the user uploaded CSV file. Must contain the headings "Username", "Plushie Name" and "dob".
-- `GOOGLE_APPLICATION_CREDENTIALS={fileName}.json` - the secret account credentials for Firebase.
+- `GOOGLE_APPLICATION_CREDENTIALS={path}` - the secret account credentials for Firebase.
   
 ### Optional Files
 - `MAPPED_FROM_CSV_JSON=mapped-from-csv.json` - the result of the successful conversions from CSV to JSON.
