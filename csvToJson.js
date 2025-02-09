@@ -1,3 +1,4 @@
+import "./config.js";
 import { createReadStream } from "fs";
 import csv from "csv-parser";
 import {
@@ -21,7 +22,7 @@ setupFilesAndObjects();
 
 createReadStream(process.env.SOURCE_CSV)
   .pipe(csv())
-  .on("data", row => {
+  .on("data", (row) => {
     const plushie = {
       username: trim(row["Username"]),
       name: trim(row["Plushie Name"]),
@@ -65,17 +66,17 @@ createReadStream(process.env.SOURCE_CSV)
   });
 
 function mapJsonObjects() {
-  users.forEach(currentUsername => {
+  users.forEach((currentUsername) => {
     const userId = setCurrentUserId(currentUsername);
 
     plushies
       // Find all plushies for this user which haven't been added yet)
       .filter(
-        plushie =>
+        (plushie) =>
           plushie.username === currentUsername && !doesPlushieExist(plushie)
       )
       // Loop through adding the unique results
-      .forEach(plushie => {
+      .forEach((plushie) => {
         outputJsonData.plushies[generateId()] = {
           name: plushie.name,
           userId: `/users/${userId}`,
@@ -87,7 +88,7 @@ function mapJsonObjects() {
 
 function setCurrentUserId(currentUsername) {
   let userId = Object.keys(outputJsonData.users).find(
-    id => outputJsonData.users[id].username === currentUsername
+    (id) => outputJsonData.users[id].username === currentUsername
   );
 
   // Add a new user if there is no matching user id
@@ -103,7 +104,7 @@ function writeFailureCsvFile() {
   if (failedEntries.length === 0) return; // Prevent writing an empty file
 
   const failedCsvContent = failedEntries
-    .map(entry => `${entry.Username},${entry["Plushie Name"]},${entry.dob}`)
+    .map((entry) => `${entry.Username},${entry["Plushie Name"]},${entry.dob}`)
     .join("\n");
 
   // Append instead of overwriting
@@ -134,7 +135,7 @@ function setupFilesAndObjects() {
 
 function doesPlushieExist(plushie) {
   return Object.values(outputJsonData.plushies).find(
-    matchingPlushie =>
+    (matchingPlushie) =>
       matchingPlushie.name === plushie.name &&
       matchingPlushie.dob === plushie.dob
   );
