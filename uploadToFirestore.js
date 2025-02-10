@@ -12,7 +12,7 @@ const data = readJsonFile(process.env.MAPPED_FOR_UPLOAD_JSON);
 // Run the upload
 uploadData()
   .then(() => console.log("Data upload complete"))
-  .catch(error => console.error("Error uploading data:", error));
+  .catch((error) => console.error("Error uploading data:", error));
 
 async function uploadData() {
   await addCollection("users", "username");
@@ -22,7 +22,7 @@ async function uploadData() {
 async function addCollection(collectionName, identifier) {
   const collection = db.collection(collectionName);
 
-  for (let doc of data.filter(item => item.collection === collectionName)) {
+  for (let doc of data.filter((item) => item.collection === collectionName)) {
     try {
       await collection.doc(doc.doc).set(doc.data);
       console.log(`Added: ${doc.data[identifier]}`);

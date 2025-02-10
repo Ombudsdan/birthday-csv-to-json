@@ -47,3 +47,27 @@ export function trim(str) {
 export function generateId() {
   return randomBytes(10).toString("hex"); // 20 characters long
 }
+
+/** Check for any missing required fields */
+export function isInvalidObject(row) {
+  return Object.values(row).filter((val) => !val).length > 0;
+}
+
+/** Skip completely empty rows */
+export function isEmptyObject(row) {
+  const allValues = Object.values(row);
+  return allValues.filter((val) => !val).length === allValues.length;
+}
+
+/** This adds some flexibility in the CSV column naming, for example allowing "username" or "user". */
+export function matchAllowedHeadingLabels(text, allowedWords) {
+  // Escape special characters and join with "|"
+  const pattern = allowedWords
+    .map((word) => word.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"))
+    .join("|");
+
+  // Create regex dynamically
+  const regex = new RegExp(`\\b(${pattern})\\b`, "gi"); // \b ensures whole word match
+
+  return text.match(regex); // Returns matches or an empty array if none found
+}

@@ -1,0 +1,157 @@
+[
+  {
+    "collection": "users",
+    "doc": "93a521e2ca506386c9b6",
+    "data": {
+      "username": "BanjoHootson",
+      "firstName": "Banjo",
+      "lastName": "Hootson",
+      "dob": "2023-03-05"
+    }
+  },
+  {
+    "collection": "users",
+    "doc": "94822b3af0d2a218f7b8",
+    "data": {
+      "username": "MandyHootson",
+      "firstName": "Mandy",
+      "lastName": "Hootson",
+      "dob": "2023-10-29"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "e0e9643c3e1b3ca8ada2",
+    "data": {
+      "name": "Big Monkey",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2016-09-14"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "19be56cd496dfb3476cb",
+    "data": {
+      "name": "Djungel",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2021-09-26"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "4cf4365622b21632e46d",
+    "data": {
+      "name": "Morris",
+      "userId": "/users/94822b3af0d2a218f7b8",
+      "dob": "2024-07-17"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "5a620fac051c406e4fa5",
+    "data": {
+      "name": "Gordon",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2017-08-14"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "e2b109ee4c49a681133b",
+    "data": {
+      "name": "Duoringo",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2024-01-10"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "3bf5b02ee291bc26a840",
+    "data": {
+      "name": "Dav",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2022-05-26"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "3bf5b02ee291bc26a841",
+    "data": {
+      "name": "Baby Dave",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2022-05-26"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "8038650ff234aaaad73d",
+    "data": {
+      "name": "Marcelo",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2024-09-04"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "c63d91341e9d311c7d1a",
+    "data": {
+      "name": "Pongo",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2021-12-12"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "c63d91341e9d311c7d1b",
+    "data": {
+      "name": "Kamek",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2021-12-12"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "5cd52f0999d893e730bc",
+    "data": {
+      "name": "Dangler",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2021-06-13"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "74c692d0fc80357ff696",
+    "data": {
+      "name": "Bruce",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2020-07-03"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "87855025d01bbefb5638",
+    "data": {
+      "name": "Moriarty",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2014-09-14"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "9aa8a6d23d76de37da85",
+    "data": {
+      "name": "Monkey",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2016-05-15"
+    }
+  },
+  {
+    "collection": "plushies",
+    "doc": "b279d6fe68ebc5263ce3",
+    "data": {
+      "name": "Gordon's Baby",
+      "userId": "/users/93a521e2ca506386c9b6",
+      "dob": "2019-12-21"
+    }
+  }
+]

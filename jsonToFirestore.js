@@ -1,3 +1,4 @@
+import "./config.js";
 import { readJsonFile, writeDataToJsonFile, doesFileExist } from "./utils.js";
 
 if (doesFileExist(process.env.MAPPED_FROM_CSV_JSON)) {

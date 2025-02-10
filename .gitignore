@@ -1,8 +1,10 @@
 .env
 node_modules/
+settings.json
 
 # Input/Output Files
 input.csv
 errors.csv
 mapped-from-csv.json
 mapped-from-json-for-firestore.json
+mock-data.json
